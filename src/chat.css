@@ -1,0 +1,168 @@
+:root {
+  --card-bg-light: #ffffff;
+  --text-color-light: #333333;
+  --user-card-bg-light: #dcf8c6;  /* WhatsApp green */
+  --bot-card-bg-light: #ffffff;   /* WhatsApp white */
+  --suggestion-bg-light: #e8f0fe;
+  --suggestion-hover-light: #d2e3fc;
+  --input-border-light: #ccc;
+  --primary-color: #007bff;
+}
+
+body.dark-mode {
+  --card-bg-dark: #1e1e1e;
+  --text-color-dark: #f1f1f1;
+  --user-card-bg-dark: #054640;    /* WhatsApp dark bubble green */
+  --bot-card-bg-dark: #2a2f32;     /* WhatsApp dark gray */
+  --suggestion-bg-dark: #3a3a3a;
+  --suggestion-hover-dark: #4a4a4a;
+  --input-border-dark: #555;
+}
+
+.Chat-container {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+}
+
+.chat-section {
+  background-color: var(--card-bg-light);
+  color: var(--text-color-light);
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  max-width: 400px;
+  margin-top: 1rem;
+}
+
+body.dark-mode .chat-section {
+  background-color: var(--card-bg-dark);
+  color: var(--text-color-dark);
+}
+
+.chat-heading {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+.chat-box {
+  max-height: 200px;
+  overflow-y: auto;
+  margin-bottom: 1rem;
+  padding-right: 5px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.chat-pair {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* User message card (WhatsApp green) */
+.chat-question {
+  align-self: flex-end;
+  background-color: var(--user-card-bg-light);
+  color: var(--text-color-light);
+  padding: 0.6rem 1rem;
+  border-radius: 12px 12px 0 12px;
+  max-width: 80%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .chat-question {
+  background-color: var(--user-card-bg-dark);
+  color: var(--text-color-dark);
+}
+
+/* Bot message card (WhatsApp white/gray) */
+.chat-answer {
+  align-self: flex-start;
+  background-color: var(--bot-card-bg-light);
+  color: var(--text-color-light);
+  padding: 0.6rem 1rem;
+  border-radius: 12px 12px 12px 0;
+  max-width: 80%;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.1);
+}
+
+body.dark-mode .chat-answer {
+  background-color: var(--bot-card-bg-dark);
+  color: var(--text-color-dark);
+}
+
+.chat-input-row {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.chat-input {
+  flex: 1;
+  padding: 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--input-border-light);
+  background-color: var(--card-bg-light);
+  color: var(--text-color-light);
+}
+
+body.dark-mode .chat-input {
+  background-color: var(--card-bg-dark);
+  border: 1px solid var(--input-border-dark);
+  color: var(--text-color-dark);
+}
+
+.chat-send-btn {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.chat-send-btn:hover {
+  opacity: 0.9;
+}
+
+.chat-suggestions {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1rem 0;
+}
+
+.chat-suggestions li {
+  background-color: var(--suggestion-bg-light);
+  padding: 8px;
+  margin: 4px 0;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.chat-suggestions li:hover {
+  background-color: var(--suggestion-hover-light);
+}
+
+body.dark-mode .chat-suggestions li {
+  background-color: var(--suggestion-bg-dark);
+}
+
+body.dark-mode .chat-suggestions li:hover {
+  background-color: var(--suggestion-hover-dark);
+}
+.chat-suggestions li.selected {
+  background-color: var(--primary-color);
+  color: white;
+}
+
+
+
+.chat-suggestions li.selected:hover {
+  background-color: var(--primary-color);
+  opacity: 0.9;
+}
+
+
+
+

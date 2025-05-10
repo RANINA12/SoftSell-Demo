@@ -1,0 +1,285 @@
+/* Cleaned and enhanced Dashboard CSS with Dark and Light mode support */
+
+:root {
+  --primary-color: #007bff;
+  --text-color-light: #222;
+  --text-color-dark: #f9f9f9;
+  --background-light: #f9f9f9;
+  --background-dark: #121212;
+  --card-bg-light: #fff;
+  --card-bg-dark: #1e1e1e;
+  --alt-bg-light: #f0f0f0;
+  --alt-bg-dark: #1a1a1a;
+  --input-border-light: #ccc;
+  --input-border-dark: #444;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}
+
+body.light-mode {
+  background-color: var(--background-light);
+  color: var(--text-color-light);
+}
+
+body.dark-mode {
+  background-color: var(--background-dark);
+  color: var(--text-color-dark);
+}
+
+/* Header */
+.header {
+  background-color: var(--primary-color);
+  padding: 0.5rem 2rem;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;  
+}
+
+.header-title {
+  display: flex;
+  gap : 1rem;
+ 
+  align-items: center;  
+}
+
+.logo {
+  height: 35px;
+  width: auto;
+  object-fit: contain;
+  border-radius: 50%;
+}
+
+.toggle-text {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.toggle-switch {
+  width: 50px;
+  height: 26px;
+  background-color: #ccc;
+  border-radius: 50px;
+  position: relative;
+  cursor: pointer;
+}
+
+.toggle-switch:hover {
+  background-color: #bbb;
+}
+
+.switch {
+  width: 22px;
+  height: 22px;
+  background-color: white;
+  border-radius: 50%;
+  position: absolute;
+  top: 2px;
+  left: 2px;
+  transition: left 0.3s ease;
+}
+
+.switch-on {
+  left: 26px;
+}
+
+.mode-label {
+  font-size: 0.85rem;
+}
+
+/* Hero Section */
+.hero-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 3rem 1rem;
+  gap: 1rem;
+  background-color: var(--card-bg-light);
+ 
+}
+
+body.dark-mode .hero-section {
+  background-color: var(--card-bg-dark);
+  color: var(--text-color-dark);
+}
+
+.hero-section h2 {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+}
+
+.hero-section p {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+}
+
+/* Section Headings */
+.section-heading {
+  text-align: center;
+  font-size: 1.5rem;
+  margin-bottom: 1.5rem;
+  position: relative;
+}
+
+.section-heading::after {
+  content: '';
+  width: 60px;
+  height: 3px;
+  background-color: transparent;
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: background-color 0.3s ease;
+}
+
+.section-heading:hover::after {
+  background-color: var(--primary-color);
+}
+
+/* Dual Box Section */
+.dual-box-section {
+  padding: 2rem 1rem;
+}
+
+.dual-box {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1.5rem;
+}
+
+.info-card {
+  background-color: var(--card-bg-light);
+  color: var(--text-color-light);
+  border-radius: 12px;
+  padding: 1.5rem;
+  width: 250px;
+  text-align: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+body.dark-mode .info-card {
+  background-color: var(--card-bg-dark);
+  color: var(--text-color-dark);
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.icon {
+  font-size: 2rem;
+  margin-bottom: 0.75rem;
+}
+
+/* Alt background section */
+.bg-alt {
+  padding: 2rem 1rem;
+  background-color: var(--alt-bg-light);
+}
+
+body.dark-mode .bg-alt {
+  background-color: var(--alt-bg-dark);
+}
+
+/* Grid for Reviews */
+.grid-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.card {
+  background-color: var(--card-bg-light);
+  color: var(--text-color-light);
+  padding: 1.25rem;
+  border-radius: 10px;
+  max-width: 300px;
+}
+
+body.dark-mode .card {
+  background-color: var(--card-bg-dark);
+  color: var(--text-color-dark);
+}
+
+/* Contact Form */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  max-width: 400px;
+  margin: 2rem auto;
+}
+
+input,
+select,
+textarea {
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid var(--input-border-light);
+  background-color: var(--card-bg-light);
+  color: var(--text-color-light);
+}
+
+body.dark-mode input,
+body.dark-mode select,
+body.dark-mode textarea {
+  background-color: var(--card-bg-dark);
+  color: var(--text-color-dark);
+  border: 1px solid var(--input-border-dark);
+}
+
+button {
+  background-color: var(--primary-color);
+  color: white;
+  padding: 12px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+button:hover {
+  opacity: 0.9;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1.25rem;
+  font-size: 0.85rem;
+  background-color: var(--background-light);
+  color: var(--text-color-light);
+}
+
+body.dark-mode footer {
+  background-color: var(--background-dark);
+  color: var(--text-color-dark);
+}
+/* Responsive Design */
+@media (max-width: 768px) {
+  .dual-box {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .info-card {
+    width: 90%;
+  }
+
+  .grid-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
